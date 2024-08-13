@@ -1,1 +1,606 @@
-/*ini CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: #eee;
+}
+
+/* Splash Screen */
+
+.intro{
+	position: fixed;
+	z-index: 1;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100vh;
+	background-color: #339cd7;
+	transition: 1s;
+}
+
+.logo-header{
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #eee;
+}
+
+.logo{
+	position: relative;
+	display: inline-block;
+	bottom: -20px;
+	opacity: 0;
+}
+
+.logo.active{
+	bottom: 0;
+	opacity: 1;
+	transition: ease-in-out 0.5s;
+}
+
+.logo.fade{
+	bottom: 0;
+	opacity: 0;
+	transition: ease-in-out 0.5s;
+}
+
+.main-title {
+    background-color: #339cd7;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    animation: fade-in-title 0.5s ease-in;
+}
+
+/* Animation for .main-title */
+@keyframes fade-in-title {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    animation: fade-in-main 0.5s;
+}
+
+/* Animation for main */
+@keyframes fade-in-main {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.left-flex form {
+    padding: 12px;
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+.left-flex .radio-form {
+    margin: 0 10px;
+}
+
+.left-flex .radio-form h3 {
+    margin: 10px;
+}
+
+.left-flex .radio-form {
+    display: flex;
+    align-items: center;
+}
+
+.left-flex .radio-form input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.left-flex .radio-form .lbl-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #339cd7;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.left-flex .radio-form .lbl-radio:hover {
+    background-color: #339cd7;
+    color: white;
+}
+
+.left-flex .radio-form input[type=radio]:checked + .lbl-radio {
+    color: white;
+    background-color: #339cd7;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    justify-content: center;
+}
+
+.left-flex .radio-form .lbl-slash {
+    margin-left: 10px;
+}
+
+.left-flex .input-form {
+    margin: 0 10px;
+}
+
+.left-flex .input-group {
+    display: flex;
+}
+
+.left-flex .input-form input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 7px 0 0 7px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Nunito", sans-serif;
+    transition: .3s;
+}
+
+.left-flex .input-form input[type=number]:focus {
+    border-color: #339cd7;
+    box-shadow: 0 0 8px 0 #339cd7;
+}
+
+.left-flex .span-input-group {
+    display: flex;
+    background-color: #339cd7;
+    padding: 10px;
+    border-radius: 0 7px 7px 0;
+    margin: 8px 0;
+    align-items: center;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.left-flex .btn-form-l {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.left-flex .btn-form-l .btn-calc{
+    width: 100px;
+    border-radius: 7px;
+    padding: 7px;
+    border: none;
+    background-color: #339cd7;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.left-flex .btn-form-l .btn-calc:hover {
+    background-color: #339cd7;
+}
+
+.left-flex .btn-form-l .btn-rst{
+    width: 70px;
+    border-radius: 7px;
+    padding: 7px;
+    border: 1px solid #eee;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.left-flex .btn-form-l .btn-rst:hover {
+    background-color: #ccc;
+}
+
+aside {
+    padding: 48px;
+}
+
+aside.left-flex,
+aside.right-flex {
+    width: 100%;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.right-flex .result-form {
+    background-color: #eee;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.right-flex .result-form h2 {
+    text-align: center;
+    margin: 0;
+    margin: 0 0 10px;
+}
+
+.right-flex .result-form h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0 0 10px;
+}
+
+.right-flex .result-form h3 {
+    text-align: center;
+}
+
+.comment {
+    display: none;
+    border: dashed 1px;
+    border-radius: 7px;
+    padding: 5px;
+    margin-top: 0;
+}
+
+#comment {
+    color: #339cd7;
+    font-weight: 800;
+}
+
+.right-flex .result-form .btn-form-r {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.right-flex .result-form .btn-form-r button {
+    width: 170px;
+    border: none;
+    border-radius: 7px;
+    padding: 7px;
+    background-color: #339cd7;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    display: none;
+}
+
+.right-flex .result-form .btn-form-r button:hover {
+    background-color: #339cd7;
+}
+
+.right-flex .text-info {
+    display: block;
+}
+
+#result-bmi-span {
+    color: #339cd7;
+}
+
+.right-flex .result-article {
+    display: none;
+}
+
+.right-flex .btn-consult {
+    width: 220px;
+    border: none;
+    border-radius: 7px;
+    padding: 8px;
+    background-color: #339cd7;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.right-flex .btn-regis {
+    width: 190px;
+    border: none;
+    border-radius: 7px;
+    padding: 8px;
+    background-color: #339cd7;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.right-flex button:hover {
+    background-color: #339cd7;
+}
+
+.right-flex .sugest-form {
+    background-color: #eee;
+    border-radius: 10px;
+    text-align: center;
+    padding: 12px;
+}
+
+.right-flex .sugest-form ul {
+    padding: 0;
+}
+
+.right-flex .sugest-low {
+    display: none;
+}
+
+.right-flex .sugest-mid {
+    display: none;
+}
+
+.right-flex .sugest-mid h1 {
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding: 0 0 20px
+}
+
+.right-flex .sugest-high {
+    display: none;
+}
+
+.right-flex .sugest-veryhigh {
+    display: none;
+}
+
+.right-flex .sugest-form h1 {
+    margin: 0;
+}
+
+.right-flex .sugest-form ul {
+    list-style: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.right-flex .sugest-form .btn-form-r {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: white;
+    padding: 1px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fade-in-footer 0.5s ease-in;
+}
+
+/* Animation for footer */
+@keyframes fade-in-footer {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* popup Content */
+.popup {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 400px;
+  
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 5px 20px;
+    border: 1px solid #888;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) -1px 2px 2px 1px;
+  }
+  
+  #popupText {
+    padding-right: 5px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(24, 23, 23);
+  }
+  
+  /* Tombol tutup */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .close:hover {
+    color: #339cd7; 
+  }
+
+/* Untuk layar di bawah 768px (Tablet dan ponsel) */
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        margin: 0 10px;
+    }
+
+    p {
+        text-align: justify;
+        text-indent: 30px;
+        font-size: 0.9rem;
+    }
+
+    ul {
+        font-size: 0.9rem;
+    }
+    
+    .text-info {
+        text-indent: 0;
+    }
+    
+    .result-bmi-span {
+        text-indent: 0;
+    }
+
+    .left-flex, .right-flex {
+        width: 100%;
+        padding: 0;
+    }
+
+    .left-flex form {
+        margin: 0 40px;
+    }
+
+    .left-flex .btn-form-l {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .left-flex .btn-form-l .btn-calc,
+    .left-flex .btn-form-l .btn-rst {
+        width: 100%;
+    }
+
+    .left-flex article {
+        margin: 40px;
+    }
+
+    .right-flex section {
+        margin: 40px;
+    }
+}
+
+/* Untuk layar di bawah 480px (Ponsel kecil) */
+@media only screen and (max-width: 480px) {
+
+    .logo-header {
+        font-size: 1.4rem;
+    }
+
+    p {
+        text-align: justify;
+        text-indent: 30px;
+        font-size: 0.9rem;
+    }
+
+    ul {
+        font-size: 0.9rem;
+    }
+    
+    .text-info {
+        text-indent: 0;
+    }
+    
+    .result-bmi-span {
+        text-indent: 0;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .left-flex form {
+        margin: 0 20px;
+    }
+
+    .left-flex .input-form input[type=number],
+    .left-flex .radio-form .lbl-radio {
+        width: 100%;
+    }
+
+    .radio-title {
+        display: none;
+    }
+
+    .left-flex .radio-form .lbl-radio {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .left-flex .radio-form #radio-male {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .left-flex .radio-form .lbl-slash {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .left-flex .radio-form #radio-female {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .left-flex article {
+        margin: 20px;
+    }
+
+    .left-flex article header h2 {
+        font-size: 1.2rem;
+    }
+
+    .right-flex section {
+        margin: 20px;
+    }
+
+    .right-flex .result-form h1 {
+        font-size: 1.5rem;
+    }
+
+    .right-flex .result-form h2 {
+        font-size: 1.3rem;
+    }
+
+    .right-flex .result-form h3 {
+        font-size: 1rem;
+    }
+
+    .right-flex .btn-article-r {
+        line-height: 40px;
+    }
+
+    .right-flex .btn-form-r {
+        line-height: 40px;
+    }
+
+    .right-flex .btn-consult,
+    .right-flex .btn-regis {
+        width: 100%;
+    }
+
+    .right-flex .sugest-form h1 {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        h3 {
+            font-size: 0.9rem;
+            padding: 5px;
+        }
+    }
+}
